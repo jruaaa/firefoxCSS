@@ -1,5 +1,15 @@
 /*::::Firefox Halo::::*/
 
+/* Standard folder*/
+#bookmarks-view treechildren::-moz-tree-image(container),
+#PlacesToolbarItems toolbarbutton[container="true"],
+#PlacesToolbarItems menu[container="true"] .menu-iconic-left,
+#BMB_bookmarksPopup menu[container="true"] .menu-iconic-icon,
+#bookmarksMenu menu[container="true"] .menu-iconic-icon,
+.bookmark-item[container] {
+    list-style-image: url("folder.svg") !important;
+
+}
 
 /* Removes the tiny line in the bookmarks bar */
 toolbarseparator {
