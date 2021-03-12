@@ -1,5 +1,7 @@
 /*::::Firefox Halo::::*/
 
+@import url(dark_context.css);
+
 /* Standard folder*/
 #bookmarks-view treechildren::-moz-tree-image(container),
 #PlacesToolbarItems toolbarbutton[container="true"],
@@ -870,3 +872,47 @@ tab
   background-image: url("icon/noicon_icon.png")!important;
   background-size: cover!important;
 }
+
+:is(#back-button, #forward-button, #viewButton) > menupopup menuseparator,
+:is(#main-menubar, #PlacesToolbar, #places) menupopup menuseparator,
+:is(#toolbar-context-menu, #tabContextMenu, #contentAreaContextMenu, #backForwardMenu, #placesContext, #pageActionContextMenu, .search-one-offs-context-menu, #SyncedTabsSidebarContext, .textbox-contextmenu, #customizationPanelItemContextMenu, #customizationPaletteItemContextMenu, #customization-toolbar-menu, #new-tab-button-popup, #new-tab-button, .popup-notification-dropmarker, #downloadsContextMenu, menupopup[menu-api], #ContentSelectDropdown, .new-tab-popup, #openHandlerPopup)
+    menuseparator {
+    /*     -moz-appearance: none !important;
+    max-height: 1px !important;
+    border: none !important;
+    padding: 0.5px 0 !important;
+    margin: 0 10px !important;
+    background-color: var(--ui-textbox-bgcolor) !important; */
+    visibility: hidden !important;
+    display: none !important;
+}
+
+:is(#back-button, #forward-button, #viewButton) > menupopup :is(menuitem, menu),
+:is(.popup-notification-dropmarker, #main-menubar, #PlacesToolbar, #places) menupopup :is(menuitem, menu),
+:is(#toolbar-context-menu, #tabContextMenu, #contentAreaContextMenu, #backForwardMenu, #placesContext, #pageActionContextMenu, .search-one-offs-context-menu, #SyncedTabsSidebarContext, .textbox-contextmenu, #customizationPanelItemContextMenu, #customizationPaletteItemContextMenu, #customization-toolbar-menu, #new-tab-button-popup, #new-tab-button, #downloadsContextMenu, menupopup[menu-api], #ContentSelectDropdown, .new-tab-popup, #openHandlerPopup)
+    :is(menuitem, menu) {
+    -moz-appearance: none !important;
+    color: var(--ui-text-80) !important;
+    padding: 0 0 0 0 !important;
+    min-height: 25px !important;
+}
+
+#openHandlerPopup :is(menuitem, menu) {
+    padding-inline-start: 5px !important;
+}
+
+:is(#back-button, #forward-button, #viewButton) > menupopup :is(menuitem, menu)[disabled="true"],
+:is(.popup-notification-dropmarker, #main-menubar, #PlacesToolbar, #places)
+    menupopup
+    :is(menuitem, menu)[disabled="true"],
+:is(#toolbar-context-menu, #tabContextMenu, #contentAreaContextMenu, #backForwardMenu, #placesContext, #pageActionContextMenu, .search-one-offs-context-menu, #SyncedTabsSidebarContext, .textbox-contextmenu, #customizationPanelItemContextMenu, #customizationPaletteItemContextMenu, #customization-toolbar-menu, #new-tab-button-popup, #new-tab-button, #downloadsContextMenu, menupopup[menu-api], #ContentSelectDropdown, .new-tab-popup, #openHandlerPopup)
+    :is(menuitem, menu)[disabled="true"] {
+    -moz-appearance: none !important;
+    color: rgba(255, 255, 255, 0.45) !important;
+    background-color: initial !important;
+}
+
+/* menuseparator:not(:first-of-type) + :is(menu, menuitem) {
+    border-top: 1px solid #363A59 !important;
+    padding-top: 3px !important;
+} */
