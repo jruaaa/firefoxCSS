@@ -1,4 +1,4 @@
-#Changes from seirin-blue's:
+# Changes from seirin-blue's:
 
 Fixed bookmark folder icon
 
